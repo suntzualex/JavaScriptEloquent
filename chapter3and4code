@@ -1,0 +1,194 @@
+
+
+var landscape = function(){
+
+ var result = "";
+ var flat function(size){
+  for(var count = 0; count < size; count++){
+   result += "_";
+  };
+ var mountain = function(size){
+ result += "/";
+ for(var count = 0; count < size; count++){
+  result +="'";
+  result +="\\";
+ };
+
+flat(3);
+mountain(4);
+flat(6);
+mountain(1);
+flat(1);
+return result;
+};
+
+console.log(landscape());
+
+
+
+// the object missileSystem
+missileSystem = {
+
+name: "missileSystem one",
+launch: function(command){
+  if(command == "now"){
+   console.log("launching missiles";
+  }else if(command == "takeABreak"){
+   console.log("missiles back in silos";
+  }else{
+   console.log("not a known command, launching anyway...");
+  }
+};
+
+
+
+safeMode = false;
+
+// 2 functions as values
+var launchMissiles = function(value){
+ missileSystem.launch("now");
+};
+if(safeMode){
+ launchMissiles = function(value) {
+  missileSystem("takeABreak");
+}
+
+
+launchMissiles();
+
+
+function square(x){
+ return x * x;
+}
+
+console.log("The future says: ", future());
+function future(){
+ return "we still have no flying cars";
+}
+
+
+function example(){
+ function a(){} // oke
+ if(something){
+ function b(){} // danger
+ }
+  }
+
+
+// closure
+
+function wrapValue(n){
+ var localVariable = n;
+ return function(){ return localVariable;};
+}
+
+var wrap1 = wrapValue(1);
+var wrap2 = wrapValue(2);
+console.log(wrap1());
+console.log(wrap2());
+
+
+function power(base, exponent){
+ if (exponent == 0){
+   return 1;
+ }else{
+  return base * power(base, exponent - 1);
+ }
+ console.log(power(2,3));
+
+function findSolution(target){
+ function find(start, history){
+  if(start == target){
+   return history;
+  }else if(start > target){
+   return null;
+  }else{
+   return find(start + 5, "(" + history + " + 5)") ||
+   find(start * 3, "(" + history + " *3)");
+  }
+console.log(findSolution(24));
+
+
+// Chapter 3 Functions Exercises
+// Minimum
+function min(a,b){
+  
+  if(isNaN(a) || isNaN(b)){
+    return "not comparable";
+  }
+  if(a == b){
+   return a;
+  } else if(a < b){
+   return a;
+  }else{
+  return b;
+}
+ }
+  
+// 2. Recursion
+// 0 is even, one is odd, for any number N, it's evenness
+// is the same as N-2
+function isEven(number){
+
+// basket cases like negative numbers
+    if(number < 0 || isNaN(number)){
+    return "??"; // what the hell
+    }
+    if(number == 0){
+    return true;
+    }else if(number == 1){
+    return false;
+    }else{
+     return isEven(number - 2);
+    }
+}
+
+// Bean Counting
+// use charAt() 
+function countBs(text){
+
+  var bCount = 0;
+  for(var counter = 0; counter < text.length; counter++){
+     // count the B's
+     if(text.charAt(counter) == "B"){
+       bCount++;
+    }
+  }
+   return bCount;
+  }
+
+// character counting
+function countChar(text, character){
+  var charCount = 0;
+  for(var cnt = 0; cnt < text.length; cnt++){
+     if(text.charAt(cnt) == character){
+     charCount++;
+     }
+   }
+   return charCount;
+}
+
+// Chapter 4 Data Structures objects and Arrays
+
+// Data sets
+
+// squirrel = left and pizza = right 00 01 10 11 is the order
+// the formula was
+// n11 x n00 - n10 x n01
+// 3 x 0 - 2 x 1
+// divided by other numbers
+
+function hasEvent(event, entry){
+ return entry.events.indexOf(event) != -1;
+}
+
+function tableFor(event, journal){
+ var table = [0,0,0,0];
+ for(var i = 0; i < journal.length; i++){
+  var entry = journal[i], index =  0;
+  if(hasEvent(event, entry)) index += 1;
+  if(entry.squirrel) index += 2;
+  table[index] += 1;
+}
+ return table;
+}

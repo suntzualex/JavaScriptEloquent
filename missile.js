@@ -1,18 +1,16 @@
 // the object missileSystem
 missileSystem = {
-
 name: "missileSystem one",
 launch: function(command){
   if(command == "now"){
-   console.log("launching missiles";
+   console.log("launching missiles");
   }else if(command == "takeABreak"){
-   console.log("missiles back in silos";
+   console.log("missiles back in silos");
   }else{
    console.log("not a known command, launching anyway...");
   }
+}
 };
-
-
 
 safeMode = false;
 
@@ -22,8 +20,8 @@ var launchMissiles = function(value){
 };
 if(safeMode){
  launchMissiles = function(value) {
-  missileSystem("takeABreak");
+  missileSystem.launch("takeABreak");
 }
-
+}
 
 launchMissiles();

@@ -82,11 +82,19 @@ function drawTime(ctx, radius){
      drawHand(ctx, minute, radius*0.8, radius*0.07);
      // second
      second=(second*Math.PI/30);
-     drawHand(ctx, second, radius*0.9, radius*0.02);
+     drawHand(ctx, second, radius*0.9, radius*0.02, "#FF0000");
 }
 
-function drawHand(ctx, pos, length, width){
+function drawHand(ctx, pos, length, width, color){
+ 
+  
   ctx.beginPath();
+  // set the color black is default
+  if (color == "" || null){
+   ctx.fillStyle("#000");
+  }else{
+   ctx.fillStyle(color);
+  }
   ctx.lineWidth = width;
   ctx.lineCap = "round";
   ctx.moveTo(0,0);

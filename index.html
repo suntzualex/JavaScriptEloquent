@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chapter 14 Exercise 1</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1>Het gecensureerde keyboard</h1>
+
+  <label>Typ je tekst in...</label>
+  <input type="text">
+  <script>
+    var field = document.querySelector("input");
+    field.addEventListener("keydown", function(event){
+
+       if(event.keyCode == 87 && (event.shiftKey || event.){
+         console.log("pressed w");
+         event.preventDefault();
+       }
+
+    });
+    keys = {87: "W", 81: "Q", 88: "X"};
+
+
+  </script>
+
+
+
+</body>
+</html>
